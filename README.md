@@ -1,8 +1,8 @@
-# Towards Physics-Informed Diffusion Reinforcemnt Learning for Investigating Adverserial Trajectories
- Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adverserial in Trajectories.
+# Towards Physics-Informed Diffusion Reinforcement Learning for Investigating Adversarial Trajectories
+ Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories.
 
 ## Overview
-PhyDRL builds upon the Denoising Diffusion Probabilistic Model (DDPM) framework to capture typical patterns in object trajectories, then flags any departures from these patterns as anomalies. In contrast to conventional diffusion approaches, it weaves physics-based constraints into the generative stage via reinforcement learning, making sure that the trajectories it synthesizes remain physically coherent and align with established motion laws. By combining a data-driven methodology with physics-informed priors, PhyDRL produces more realistic trajectory predictions that mirror real-world dynamics while naturally reducing the risk of overfitting.
+PhyDRL builds upon the Denoising Diffusion Probabilistic Model (DDPM) framework to capture typical patterns in object trajectories and then flags any departures from these patterns as anomalies. In contrast to conventional diffusion approaches, it weaves physics-based constraints into the generative stage via reinforcement learning, making sure that the trajectories it synthesizes remain physically coherent and align with established motion laws. By combining a data-driven methodology with physics-informed priors, PhyDRL produces more realistic trajectory predictions that mirror real-world dynamics while naturally reducing the risk of overfitting.
 
 ## Key Features
 
@@ -122,7 +122,7 @@ You can generate new trajectories that mimic the learned dynamics:
 
 We provide a Kinematic Bicycle Environment that can incorporate the diffusion model to simulate realistic state transitions, beneficial for RL training:
 
-1.Train an RL Agent (PPO, DQN, or SAC) with diffusion-based noise:
+1. Train an RL Agent (PPO, DQN, or SAC) with diffusion-based noise:
 ```text
 python train.py \
   --algo PPO \
@@ -133,7 +133,7 @@ python train.py \
   --save_path results/ppo_model
 ```
 
-2.Evaluate an RL Agent:
+2. Evaluate an RL Agent:
 ```text
 python evaluate.py \
   --algo PPO \
