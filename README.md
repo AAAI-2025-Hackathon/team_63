@@ -1,8 +1,15 @@
 # Towards Physics-Informed Diffusion Reinforcement Learning for Investigating Adversarial Trajectories
+<<<<<<< HEAD
+ Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories".
+
+## Overview
+Given trajectory data, a domain-specific study area, and a user-defined threshold, we aim to find anomalous trajectories indicative of possible deception-based activity (i.e., an activity that attempts to conceal its movements by intentionally emitting false signals). The problem, especially in the maritime domain, is societally important to curb illegal activities in international waters, such as unauthorized fishing and illicit oil transfers. The problem is computationally challenging due to a potentially infinite variety of fake trajectory behavior and a lack of ground truth to train state-of-the-art generative models. Due to data sparsity, prior approaches capture anomalous trajectories with high false positive rates, resulting in lower accuracy. To address these limitations, we propose a physics-informed diffusion model that integrates kinematic knowledge to identify trajectories that do not adhere to physical laws. Experimental results on real-world datasets in the maritime and urban domains show the proposed framework provides higher prediction accuracy than baseline generative models.
+=======
  Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories.
 
 ## Overview
 PhyDRL builds upon the Denoising Diffusion Probabilistic Model (DDPM) framework to capture typical patterns in object trajectories and then flags any departures from these patterns as anomalies. In contrast to conventional diffusion approaches, it weaves physics-based constraints into the generative stage via reinforcement learning, making sure that the trajectories it synthesizes remain physically coherent and align with established motion laws. By combining a data-driven methodology with physics-informed priors, PhyDRL produces more realistic trajectory predictions that mirror real-world dynamics while naturally reducing the risk of overfitting.
+>>>>>>> 2eff72eab64044018b58fb9152ca06b8c1ffd5e3
 
 ## Key Features
 
@@ -19,7 +26,7 @@ PhyDRL builds upon the Denoising Diffusion Probabilistic Model (DDPM) framework 
    - Useful for data augmentation, simulation, or planning under realistic motion constraints.
 
 4. **Reinforcement Learning Integration** *(Optional)*:  
-   - Includes a **Kinematic Bicycle Environment** (`rlpidpm/env.py`) that can incorporate diffusion-based stochasticity for more realistic state transitions.  
+   - Includes a **Kinematic Bicycle Environment** (`rlPhysics-Informed-Diffusion-RL/env.py`) that can incorporate diffusion-based stochasticity for more realistic state transitions.  
    - Trains RL agents (PPO, DQN, SAC) using `train.py` or `evaluate.py` for advanced control and anomaly detection tasks in uncertain environments.
 
 
@@ -44,8 +51,8 @@ The required packages with python environment is:
 
 Download the repository to your local machine, either via git or as a ZIP download.
 
-      git clone https://github.com/arunshar/Physics-Informed-Diffusion-Probabistic-Model.git
-      cd Pi-DPM
+      git clone https://github.com/AAAI-2025-Hackathon/team_63.git
+      cd PhyDRL
 
 2. Installation Dependencies: 
 
@@ -70,7 +77,7 @@ If your primary goal is physics-informed trajectory generation or anomaly detect
   --epochs 100 \
   --batch_size 64 \
   --out checkpoints/
-						
+                        
 
 In this example:
 
@@ -85,18 +92,18 @@ This script trains the diffusion model on normal trajectory patterns, incorporat
 
 ### Detecting Anomalies
 
-Use a trained Pi-DPM model to score new trajectories:
+Use a trained PhyDRL model to score new trajectories:
 
-	  python scripts/detect.py \
+      python scripts/detect.py \
   --model checkpoints/pidpm_model.pth \
   --data data/test_dataset.csv \
   --threshold 0.1 \
   --output results/anomalies.csv
-						
+                        
 
 Here:
 
---model path to the trained Pi-DPM model checkpoint (e.g., .pth).
+--model path to the trained PhyDRL model checkpoint (e.g., .pth).
 
 --data file (or directory) of test trajectories.
 
@@ -114,7 +121,7 @@ You can generate new trajectories that mimic the learned dynamics:
   --num_samples 50 \
   --out results/synthetic_trajectories.csv
 ```
---model: path to the trained Pi-DPM checkpoint.
+--model: path to the trained PhyDRL checkpoint.
 --num_samples: how many synthetic trajectories to generate.
 --out: CSV file to store the generated trajectories.
 
@@ -167,29 +174,24 @@ python detect.py \
 
 ```plaintext
 Physics-Informed-Diffusion-RL/
-├── PhyDRL/
-│   ├── __init__.py         # Initializes the rlpidpm package
+│   ├── __init__.py         # Initializes the Physics-Informed-Diffusion-RL package
 │   ├── diffusion.py        # Diffusion model implementation (forward & reverse process)
 │   ├── physics.py          # Physics-informed constraints & losses (e.g., jerk minimization)
 │   ├── models.py           # Neural net architectures for trajectory encoding/decoding
 │   ├── utils.py            # Helper functions (logging, metrics, I/O)
 │   ├── env.py              # (Optional) Kinematic Bicycle Environment for RL integration
 ├── scripts/
-│   ├── train.py            # Script to train the Pi-DPM model (or RL agent) on a dataset
+│   ├── train.py            # Script to train the PhyDRL model (or RL agent) on a dataset
 │   ├── detect.py           # Script to compute anomaly scores for trajectories
 │   ├── generate.py         # Script to generate synthetic trajectories via diffusion model
 │   └── evaluate.py         # (Optional) Script to evaluate trained RL agents
-├── data/
-│   └── sample_dataset.csv  # Example placeholder dataset for trajectories
-├── results/
-│   └── ...                 # Outputs (model checkpoints, logs, anomalies, generated data)
-├── requirements.txt        # List of required Python packages for Pi-DPM
+├── requirements.txt        # List of required Python packages for PhyDRL
 ├── LICENSE                 # MIT License (or other) for this project
-└── README.md               # Main project documentation (this file)						
+└── README.md               # Main project documentation (this file)                    
 ```
-The rlpidpm/ directory is optional; it holds the environment and RL code. 
+The Physics-Informed-Diffusion-RL/ directory is optional; it holds the environment and RL code. 
 
-The pidpm/ directory remains the core library for diffusion-based anomaly detection and trajectory synthesis.
+The Physics-Informed-Diffusion-RL/ directory remains the core library for diffusion-based anomaly detection and trajectory synthesis.
 
 ## License
 This project is provided under the MIT License. See LICENSE for details.
