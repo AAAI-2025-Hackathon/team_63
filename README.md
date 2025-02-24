@@ -1,15 +1,8 @@
 # Towards Physics-Informed Diffusion Reinforcement Learning for Investigating Adversarial Trajectories
-<<<<<<< HEAD
- Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories".
+Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories.
 
 ## Overview
 Given trajectory data, a domain-specific study area, and a user-defined threshold, we aim to find anomalous trajectories indicative of possible deception-based activity (i.e., an activity that attempts to conceal its movements by intentionally emitting false signals). The problem, especially in the maritime domain, is societally important to curb illegal activities in international waters, such as unauthorized fishing and illicit oil transfers. The problem is computationally challenging due to a potentially infinite variety of fake trajectory behavior and a lack of ground truth to train state-of-the-art generative models. Due to data sparsity, prior approaches capture anomalous trajectories with high false positive rates, resulting in lower accuracy. To address these limitations, we propose a physics-informed diffusion model that integrates kinematic knowledge to identify trajectories that do not adhere to physical laws. Experimental results on real-world datasets in the maritime and urban domains show the proposed framework provides higher prediction accuracy than baseline generative models.
-=======
- Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories.
-
-## Overview
-PhyDRL builds upon the Denoising Diffusion Probabilistic Model (DDPM) framework to capture typical patterns in object trajectories and then flags any departures from these patterns as anomalies. In contrast to conventional diffusion approaches, it weaves physics-based constraints into the generative stage via reinforcement learning, making sure that the trajectories it synthesizes remain physically coherent and align with established motion laws. By combining a data-driven methodology with physics-informed priors, PhyDRL produces more realistic trajectory predictions that mirror real-world dynamics while naturally reducing the risk of overfitting.
->>>>>>> 2eff72eab64044018b58fb9152ca06b8c1ffd5e3
 
 ## Key Features
 
@@ -52,7 +45,7 @@ The required packages with python environment is:
 Download the repository to your local machine, either via git or as a ZIP download.
 
       git clone https://github.com/AAAI-2025-Hackathon/team_63.git
-      cd PhyDRL
+      cd Physics-Informed-Diffusion-RL
 
 2. Installation Dependencies: 
 
