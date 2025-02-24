@@ -1,6 +1,9 @@
 # Towards Physics-Informed Diffusion Reinforcement Learning for Investigating Adversarial Trajectories
 Implementation of AAAI 2025 Hackathon: "Towards Physics-Informed Diffusion Reinforcement Learning (PhyDRL) for Investigating Adversarial in Trajectories.
 
+## Selected Theme
+AI for Social Good: Use your expertise to tackle societal challenges such as poverty, education gaps, or disaster management. 
+
 ## Overview
 Given trajectory data, a domain-specific study area, and a user-defined threshold, we aim to find anomalous trajectories indicative of possible deception-based activity (i.e., an activity that attempts to conceal its movements by intentionally emitting false signals). The problem, especially in the maritime domain, is societally important to curb illegal activities in international waters, such as unauthorized fishing and illicit oil transfers. The problem is computationally challenging due to a potentially infinite variety of fake trajectory behavior and a lack of ground truth to train state-of-the-art generative models. Due to data sparsity, prior approaches capture anomalous trajectories with high false positive rates, resulting in lower accuracy. To address these limitations, we propose a physics-informed diffusion model that integrates kinematic knowledge to identify trajectories that do not adhere to physical laws. Experimental results on real-world datasets in the maritime and urban domains show the proposed framework provides higher prediction accuracy than baseline generative models.
 
